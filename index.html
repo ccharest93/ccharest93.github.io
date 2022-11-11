@@ -10,6 +10,11 @@
 		<title>Full Screen Cam</title>
 	</head>
 	<body>
+        <table id="p1">
+            <tr>
+              <th>Property</th>
+              <th>Value</th>
+            </tr>
 		<button class="captureBack">Capture back</button>
 		<button class="captureFront">Capture front</button>
 		<button class="fullscreen">Full screen</button>
@@ -26,6 +31,16 @@
 
 			function handleSuccess(stream) {
 				video.srcObject = stream;
+                var vid = stream.getVideoTracks()
+                let table = document.getElementById("p1");
+                    var con =  vid[0].getCapabilities();
+                    for (key in con){
+                        var row = table.insertRow();
+                        var cell = row.insertCell();
+                        cell.innerHTML = key;
+                        var cell = row.insertCell();
+                        cell.innerHTML = JSON.stringify(con[key]);
+                    }
 			}
 
 			function handleError(error) {
@@ -41,7 +56,7 @@
 
 				element.onclick = function () {
 					navigator.mediaDevices.getUserMedia(constraints).then(handleSuccess).catch(handleError);
-				};
+                };
 			}
 
 			capture(".captureFront", "user");
