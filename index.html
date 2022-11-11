@@ -10,6 +10,7 @@
 		<title>Full Screen Cam</title>
 	</head>
 	<body>
+        <p id="nb"  >0</p>
         <table id="p1">
             <tr>
               <th>Property</th>
@@ -32,6 +33,8 @@
 			function handleSuccess(stream) {
 				video.srcObject = stream;
                 var vid = stream.getVideoTracks()
+                let nb = document.getElementById("nb")
+                nb.innerHTML = vid.length
                 let table = document.getElementById("p1");
                     var con =  vid[0].getCapabilities()
                     for (key in con){
@@ -61,7 +64,7 @@
 				const element = document.querySelector(elementSelector);
 
 				const constraints = {
-					video: { },
+					video: {facingMode: facingMode},
 				};
 
 				element.onclick = function () {
