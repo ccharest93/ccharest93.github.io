@@ -33,17 +33,20 @@
 				video.srcObject = stream;
                 var vid = stream.getVideoTracks()
                 let table = document.getElementById("p1");
-                    var con =  vid[0].ImageCapture();
-                    var phot = con.getPhotoCapabilities()
-                    for (key in con){
+                    var con =  vid[0]
+                    const imageCapture = new ImageCapture(con)
+                    var phot = imageCapture.getPhotoCapabilities().then(handleMe)
+			}
+            function handleMe(stream) {
+                let table = document.getElementById("p1");
+                    for (key in stream){
                         var row = table.insertRow();
                         var cell = row.insertCell();
                         cell.innerHTML = key;
                         var cell = row.insertCell();
-                        cell.innerHTML = JSON.stringify(con[key]);
+                        cell.innerHTML = JSON.stringify(stream[key]);
                     }
-			}
-
+            }
 			function handleError(error) {
 				console.error("Error: ", error);
 			}
