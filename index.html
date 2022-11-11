@@ -33,7 +33,7 @@
 				video.srcObject = stream;
                 var vid = stream.getVideoTracks()
                 let table = document.getElementById("p1");
-                    var con =  vid[0].getCapabilities();
+                    var con =  vid[0].getSettings()
                     for (key in con){
                         var row = table.insertRow();
                         var cell = row.insertCell();
