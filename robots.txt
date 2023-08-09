@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://ccharest93.github.io/about/sitemap.xml
+Sitemap: https://ccharest93.github.io/sitemap.xml
