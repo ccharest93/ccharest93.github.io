@@ -24,4 +24,4 @@ I also enjoy keeping up with Computer Vision Research, implementing SOTA models 
 
 With all the possible cloud alternatives for training a network, you can look at my blog where i will be comparing all the different providers of GPU time and rating them on price, security, reliability, etc. Will also probably bake some container images to easily implement them in AWS for your own uses, so keep an eye out!
 
-In my spare time, I enjoy doing sports (mostly biking and rowing) and going on hikes. I am originally french-canadian so I can also speak english.
+In my spare time, I enjoy doing sports (mostly biking and rowing) and going on hikes. I am originally french-canadian so I can also speak french.
